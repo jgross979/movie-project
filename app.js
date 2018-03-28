@@ -18,7 +18,8 @@ var movieRoutes = require('./routes/movies')
 var indexRoutes = require('./routes/index')
       
 //APP CONFIG
-    mongoose.connect('mongodb://localhost/movie_app')
+    // mongoose.connect('mongodb://localhost/movie_app')
+    mongoose.connect('mongodb://jgross:password@ds125195.mlab.com:25195/movie_saver')
       app.set("view engine", "ejs")
       app.use(express.static("public"));
       app.use(bodyParser.urlencoded({extended:true}));

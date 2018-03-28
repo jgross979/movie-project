@@ -22,7 +22,7 @@ router.get('/', function(req, res){
         }
     })
     }else{
-        res.render('movies/index', {movies: undefined});
+        res.render('movies/index', {movies: ''});
         }
 
 })

@@ -197,6 +197,22 @@ hr.style-one {
     margin: auto;
 }
 
+.empty_message{
+    width: 100%;
+    text-align: center;
+    color: grey;
+    position: relative;
+    top: 40vh;
+}
+
+.empty_message a{
+    color: grey;
+}
+
+.empty_message a:hover{
+    color: #525050;
+}
+
 .card{
     width: 95%;
     margin: 15px auto;

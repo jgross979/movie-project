@@ -1,7 +1,7 @@
 <% include ../partials/header%>
 <div class = "container">
     <div class = "main-content">
-        <% if(movies){ %>
+        <% if(movies.length >0){ %>
         <% movies.forEach(function(movie){ %>
         <% if(movie && currentUser && movie.author.id.equals(currentUser._id)){ %>
         <div class = "card">
@@ -20,12 +20,20 @@
         <% }) %>
     </div>
     
-    <% }else if(currentUser && !movies){ %>
-        <h1 class = "empty_message">You haven't added any movies yet!</h1>
+    <% }else if(currentUser){ %>
+        <h1 class = "empty_message">
+            <a href = "/movies/new">
+                Click here to start adding movies <i class="fas fa-plus-circle"></i>
+            </a>
+        </h1>
     <% }else{ %>
-        <h1 class = "empty_message">Login to start adding movies!</h1>
+        <h1 class = "empty_message">
+            <a href = "/login">
+                Login to start adding movies!
+            </a>
+        </h1>
     <% } %>
-
+    
 </div>
 
 

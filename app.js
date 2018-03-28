@@ -28,7 +28,7 @@ var indexRoutes = require('./routes/index')
       
 //PASSPORT CONFIGURATION
     app.use(require("express-session")({
-        secret: "Nugget is a cute puppy but he smells bad",
+        secret: "secret message that I will change when not seen but the public",
         resave: false,
         saveUninitialized: false
     }));

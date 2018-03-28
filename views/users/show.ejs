@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+<div class = "container">
+    <div class = "user-card">
+        <div class = "user-title">
+        <h1><%=user.username%>'s Profile page</h1>
+        </div>
+        <div class = "user-content">
+            <img class = "user-avatar" src = "<%=user.avatar%>">
+            <div class = "user-info">
+                <p><strong>First Name: </strong><%=user.firstName%></p>
+                <p><strong>Last Name: </strong><%=user.lastName%></p>
+                <p><strong>Bio:</strong></p>
+                <p class = "user-bio"><%=user.bio%></p>
+                <% if(currentUser && currentUser._id.equals(user._id)){ %>
+                    <a href = '/users/<%=user._id%>/edit'>Edit Profile</a>
+                <% } %>
+            </div>
+            <div class = "user-movies">
+                <div class = "user-movie-title">
+                    <h2>Movies Added</h2>
+                </div>
+                    <% movies.forEach(function(movie){ %>
+                        <div class = "user-movie-item">
+                            <a href = "/movies/<%=movie._id%>">
+                                <p><%=movie.title%><p>
+                            </a>
+                            <img src = "<%=movie.image%>">
+                        </div>
+                    <% }) %>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+<% include ../partials/footer %>

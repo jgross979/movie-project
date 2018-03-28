@@ -1,0 +1,35 @@
+<% include ../partials/header%>
+<div class = "container">
+    <div class = "main-content">
+        <% if(movies){ %>
+        <% movies.forEach(function(movie){ %>
+        <% if(movie && currentUser && movie.author.id.equals(currentUser._id)){ %>
+        <div class = "card">
+            <h1 class = "card-title"><%=movie.title%></h1>
+            <img src = '<%=movie.image%>' alt = "movie poster">
+            <div class = "card-content">
+                <p>Added: <%=movie.created.toDateString()%></p>
+                <h3><%=movie.rating%>/5 Stars</h3>
+                <p><%-movie.review.substring(0,150)%></p>
+            </div>
+            <a href = "/movies/<%=movie._id%>">
+                <button class = "button more">view more</button>
+            </a>
+        </div>
+        <% } %>
+        <% }) %>
+    </div>
+    
+    <% }else if(currentUser && !movies){ %>
+        <h1 class = "empty_message">You haven't added any movies yet!</h1>
+    <% }else{ %>
+        <h1 class = "empty_message">Login to start adding movies!</h1>
+    <% } %>
+
+</div>
+
+
+
+
+
+<% include ../partials/footer%>

@@ -1,0 +1,529 @@
+body, html, ul, li{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arimo', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*-----NAV BAR-----*/
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: black;
+    z-index: 2;
+}
+
+.logo{
+    position: relative;
+    float: left;
+    left: 0px;
+    
+}
+
+.nav-items{
+    float: left;
+    position: relative;
+    left: 25px;
+}
+
+.nav-item{
+    color: white;
+    font-size: 1.2em;
+    list-style: none;
+    display: inline-block;
+    margin: 5px 15px;
+    line-height: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav-item:hover{
+    color:grey;
+}
+
+.logo .nav-item:hover{
+    color: white;
+}
+
+.nav-items-right{
+    float: right;
+    margin-right: 10px;
+    /*transform: translateY(-180px);*/
+
+}
+
+.drop-down{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 60px;
+    
+}
+
+
+.drop-down p{
+    width: 100vw;
+    height: 60px;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    background: grey;
+    margin: 0;
+    padding: 10px;
+}
+
+.drop-down a{
+    color: white;
+}
+
+.drop-down a:hover{
+    color: red;
+}
+
+/*--------Flash messages--------*/
+.error{
+    display: block;
+    position:relative;
+    top: 60px;
+    background: red;
+    width: 85%;
+    margin: auto;
+}
+
+.success{
+    display: block;
+    position:relative;
+    top: 60px;
+    background: green;
+    width: 85%;
+    margin: auto;
+}
+
+/*------NEW FORM------*/
+
+.new-form{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.form-title{
+    margin: 10px 0;
+}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.form-item{
+    display: block;
+    width: 95%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 35px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    font-size: 1.3em;
+}
+
+#text{
+    height: 150px;
+    resize: vertical;
+    font-size: 1.1em;
+    
+}
+
+.form-select{
+    display: block;
+    margin: 10px 0;
+    width: 50px;
+    height: 35px;
+}
+
+.button{
+    background: none;
+    border-radius: 7px;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.button.submit{
+    border: 2px solid grey;
+    color: grey;
+    font-size: 2em;
+}
+
+.button.submit:hover{
+    border: 2px solid black;
+    color: black;
+}
+
+/*---Login Form---*/
+
+.login-form{
+    width: 400px;
+}
+
+.button.submit.login-button{
+    font-size: 1.5em;
+}
+
+.container.login{
+    top: 75px;
+}
+
+/*----Index page----*/
+.container{
+    position: relative;
+    top: 60px;
+    width: 100%;
+    display: block;
+}
+.main-content{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.card{
+    width: 95%;
+    margin: 15px auto;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 5px 5px 5px #cecccc;
+}
+
+.card-title{
+    margin: 0;
+    height: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 60px;
+    background: yellow;
+}
+
+.card img{
+    width: 50%;
+    height: 60%;
+    margin:  10px 0;
+
+}
+
+.card-content{
+    padding: 0 6%;
+    text-align: left;
+}
+
+.button.more{
+    border: 2px solid blue;
+    color: blue;
+    font-size: 1.2em;
+}
+
+/*----Show Page----*/
+.show-container{
+    margin-top: 65px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 90%;
+}
+
+.show-content{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid grey;
+    border-radius: 3px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.show-image{
+    width: 33%;
+    padding: 7px;
+    box-sizing: border-box;
+    order: 1;
+}
+
+.show-image img{
+    width: 100%;
+}
+
+.show-title{
+    width: 66%;
+    height: 300px;
+    box-sizing: border-box;
+    order: 2;
+}
+
+
+.show-buttons{
+    width: 100%;
+    order: 3;
+    margin-left: 20px;
+}
+
+.show-extra{
+    background: #acafa0;
+    padding: 20px;
+}
+.show-comment{
+    min-height: 60px;
+    border-bottom: 1px solid black;
+}
+.button.edit.smaller{
+    font-size: 1em;
+    border-width: 1px;
+}
+.button.delete.smaller{
+    font-size: 1em;
+    border-width: 1px;
+}
+
+.comment-buttons{
+    float: right;
+}
+
+.button.back{
+    border: 2px solid blue;
+    color: blue;
+    font-size: 1.2em;
+}
+
+.button.edit{
+    border: 2px solid green;
+    color: green;
+    font-size: 1.2em;
+}
+
+.button.delete{
+    border: 2px solid red;
+    color: red;
+    font-size: 1.2em;
+}
+
+.form-delete{
+    display: inline-block;
+}
+
+
+
+
+/*----Comment Forms----*/
+
+.new-form.comment-form{
+    width: 55%;
+}
+
+
+/*-----User Index-----*/
+.user-index{
+    margin: 10px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    background: grey;
+    padding: 15px;
+}
+
+.user-index-avatar{
+    width: 15%;
+    order: 1;
+    box-sizing: border-box;
+}
+
+.user-index-name{
+    width: 12%;
+    order: 2;
+    box-sizing: border-box;
+}
+.user-index-bio{
+    width: 65%;
+    order: 3;
+    box-sizing: border-box;
+}
+
+.user-index-avatar img{
+    width: 100%;
+}
+
+/*----User Show Page----*/
+
+.user-card{
+    margin: 10px auto;
+    width: 55%;
+    border: 1px solid grey;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.user-title h1{
+    margin: 0;
+}
+.user-title{
+    padding: 10px 10px;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background: grey;
+    color: white;
+}
+
+.user-content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.user-avatar{
+    width: 50%;
+    height: 300px;
+    padding: 10px;
+    order: 1;
+    box-sizing: border-box;
+}
+
+
+.user-info{
+    width: 50%;
+    order: 2;
+    box-sizing: border-box;
+    height: 300px;
+}
+
+.user-bio{
+    overflow: scroll;
+    text-overflow: inherit;
+    height: 175px;
+}
+
+.user-movies{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    order: 3;
+    padding: 25px;
+}
+
+.user-movie-title{
+    width: 100%;
+    text-align: center;
+}
+
+.user-movie-item{
+    text-align: center;
+    width: 33%;
+    box-sizing: border-box;
+}
+
+.user-movie-item img{
+    width: 100%;
+}
+
+/*-----User Edit Form-------*/
+
+.form-item.text{
+    height: 150px;
+    resize: vertical;
+    font-size: 1.1em;
+    
+}
+
+
+
+
+
+
+/*Responsive Flex*/
+@media screen and (max-width : 450px){
+.card img{
+    width: 60%;
+    height: 50%;
+}
+.fa-bars{
+    display: inline-block;
+}
+.nav-items{
+    display: none;
+}
+}
+
+@media screen and (min-width: 451px) and (max-width : 650px){
+.card img{
+    width: 50%;
+    height: 50%;
+}
+.fa-bars{
+    display: inline-block;
+}
+.nav-items{
+    display: none;
+}
+
+}
+
+
+@media screen and (min-width: 651px) and (max-width : 750px){
+    .card{
+        width: 45%;
+    }
+    .card img{
+    width: 60%;
+    height: 40%;
+}
+.fa-bars{
+    display: inline-block;
+}
+.nav-items{
+    display: none;
+}
+}
+
+@media screen and (min-width:750px)and (max-width : 999px){
+    .card{
+        width: 45%;
+    }
+    .card img{
+    width: 60%;
+    height: 50%;
+}
+.fa-bars{
+    display: none;
+}
+}
+
+@media screen and (min-width: 1000px){
+    .card{
+        width: 30%;
+    }
+    .card img{
+    width: 65%;
+    height: 45%;
+}
+.fa-bars{
+    display: none;
+}
+}
+
+
+
+
+
+
+
+

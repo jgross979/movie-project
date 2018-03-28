@@ -1,0 +1,33 @@
+<% include ../partials/header%>
+<h1>Edit</h1>
+
+<form class = "new-form" action = "/movies/<%=movie.id%>?_method=PUT" method = "POST">
+    <label>
+        Title:
+        <input class = "form-item" type = "text" placeholder = "Title" name = "movie[title]" value = '<%=movie.title%>'>
+    </label>    
+    <label>
+        Image:
+        <input class = "form-item" type = "text" placeholder = "Image url" name = "movie[image]" value = <%=movie.image%>>        
+    </label>
+    <label>
+        Rating:
+        <select class = "form-select" name = "movie[rating]">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </label>
+    <label>
+        Review:
+        <textarea class = "form-item" id = "text" placeholder= "Type review here..." name = "movie[review]"><%-movie.review%></textarea>
+    </label>
+    <button class = "button submit" type = "submit">Submit</button>
+</form>
+
+
+
+
+<% include ../partials/footer%>

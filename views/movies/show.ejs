@@ -1,0 +1,57 @@
+<%include ../partials/header%>
+
+<div class = "show-container">
+    <div class = "show-content">
+        <div class = "show-image">
+            <img src = '<%=movie.image%>' alt = "movie poster">
+        </div>
+        <div class = "show-title">
+            <h1><%=movie.title%></h1>
+            <h3><%=movie.rating%>/5 stars</h3>
+            <p>Reviewed on <%=movie.created.toDateString()%></p>
+            <p>
+                <em>Submitted by <%= movie.author.username %></em>
+            </p>
+            <p><%-movie.review%></p>
+        </div>
+        <hr class = "style-one">
+        <div class = "show-review">
+
+        </div>
+        <div class = "show-buttons">
+            <% if( currentUser && currentUser._id.equals(movie.author.id)) {  %>
+            <form class = "form-delete" action = "/movies/<%=movie._id%>?_method=DELETE" method = POST>
+                <button class = "button delete">Delete</button>
+            </form>
+            <a href = "/movies/<%=movie._id%>/edit">
+                <button class = "button edit">Edit</button>
+            </a>
+            <% } %>
+            <a href = "/movies">
+                <button class = "button back" >Go Back</button>
+            </a>
+        </div>
+    </div>
+    <div class = "show-extra">
+        <a href = "/movies/<%=movie._id%>/comments/new">Write a comment</a>
+        
+        <% movie.comments.forEach(function(comment){ %>
+            <div class = "show-comment">
+            <p><strong><%=comment.author.username%></strong> - <%=comment.text%></p>
+            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                <div class = "comment-buttons">
+                    <a href = "/movies/<%=movie._id%>/comments/<%=comment._id%>/edit">
+                        <button class ="button edit smaller">Edit Comment</button>
+                    </a>
+                    <form class = "form-delete comments" action = "/movies/<%=movie._id%>/comments/<%=comment._id%>?_method=DELETE" method = POST>
+                        <button class = "button delete smaller">Delete</button>
+                    </form>
+                </div>
+            </div>
+            <% } %>
+        <% }) %>
+    </div>
+</div>
+
+
+<%include ../partials/footer%>

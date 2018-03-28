@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+<div class = "container">
+    <div class = "user-card">
+        <div class = "user-title">
+        <h1>Edit <%=user.username%>'s Profile page</h1>
+        </div>
+        <div class = "user-content">
+            <img class = "user-avatar" src = "<%=user.avatar%>">
+            <div class = "user-info">
+                <form action = "/users/<%=user._id%>?_method=PUT" method = "POST">
+                    <input class = "form-item" type = "text" placeholder = "Avatar image url" name = "user[avatar]" value = '<%=user.avatar%>' >
+                    <input class = "form-item" type = "text" placeholder = "First Name" name = "user[firstName]" value = '<%=user.firstName%>'>
+                    <input class = "form-item" type = "text" placeholder = "Last Name" name = "user[lastName]" value = '<%=user.lastName%>'>
+                    <textarea class = "form-item text" placeholder = "Bio..." name = "user[bio]"><%=user.bio%></textarea>
+                    <button class = "button edit">Submit Changes</button>
+                </form>
+            </div>
+            <div class = "user-movies">
+                <div class = "user-movie-title">
+                    <h2>Movies Added</h2>
+                </div>
+                    <% movies.forEach(function(movie){ %>
+                        <div class = "user-movie-item">
+                                <p><%=movie.title%><p>
+                                <form action = "movie/<%=movie._id%>">
+                                    <button class = "button delete">Delete</button>
+                                </form>
+                            <img src = "<%=movie.image%>">
+                        </div>
+                    <% }) %>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+<% include ../partials/footer %>

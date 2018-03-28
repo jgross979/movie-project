@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Movie App</title>
+        <link rel = "stylesheet" type = "text/css" href = "/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class = "navbar">
+            <ul>
+                <div class = "logo">
+                    <a href = "/movies">
+                        <li class = "nav-item">MOVIESAVER <i class="fas fa-film"></i></li>
+                    </a>   
+                </div>
+                <div class = "nav-items">
+                    <a href = "/movies">
+                        <li class = "nav-item">Home</li>
+                    </a>                    
+                    <a href = "/movies/new">
+                        <li class = "nav-item">New</li>
+                    </a>                    
+                    <a href = "/users">
+                        <li class = "nav-item">Users</li>
+                    </a>
+                </div>
+            </ul>
+                <div class ="nav-items-right">
+                    <ul>
+                        <a href = "#drop-down">
+                            <li id = "hamburger" class = "nav-item">
+                                <i class="fas fa-bars"></i>
+                            </li>
+                        </a>
+                    <div class = "nav-items">
+                        <% if(!currentUser){ %>
+                            <a href = "/login">
+                                <p class = "nav-item">Login</p>
+                            </a>
+                            <a href = "/register">
+                                <p class = "nav-item">Signup</p>
+                            </a>
+                          <%   }else{ %>
+                            <a href ="users/<%=currentUser._id%>">
+                                <p class = "nav-item special"><%= currentUser.username%></p>
+                            </a>
+                            <a href = "/logout">
+                                <p class = "nav-item">Logout</p>
+                            </a>
+                       <% } %>
+                    </div>
+                    </ul>
+                </div>
+        </nav>
+        <div class = "drop-down">
+            <a href = "/movies">
+                <p class = "nav-item"><i class="fas fa-home"></i> Home</li>
+            </a>                    
+            <a href = "/movies/new">
+                <p class = "nav-item"><i class="fas fa-plus"></i> New</li>
+            </a>            
+            <a href = "/users">
+                <p class = "nav-item"></i>Users</li>
+            </a>
+            <% if(!currentUser){ %>
+                <a href = "/login">
+                    <p class = "nav-item">Login</p>
+                </a>
+                <a href = "/register">
+                    <p class = "nav-item">Signup</p>
+                </a>
+              <%   }else{ %>
+                <a href ="/users/<%=currentUser._id%>">
+                    <p class = "nav-item special"><%= currentUser.username%></p>
+                </a>
+                <a href = "/logout">
+                    <p class = "nav-item">Logout</p>
+                </a>
+           <% } %>
+        </div>
+        <% if(error && error.length > 0){ %>
+        <div class = "error"><h3><%= error %></h3></div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+        <div class = "success"><h3><%= success %></h3></div>
+        <% } %>
+
+        

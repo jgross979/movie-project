@@ -1,0 +1,11 @@
+<% include ../partials/header %>
+
+<h1>Create a comment!</h1>
+
+<form class = "new-form comment-form" action = "/movies/<%=movie._id%>/comments" method = "POST">
+    <h3>Create Comment</h3>
+    <textarea class = "form-item text" placeholder = "Comment text" name = "comment[text]"></textarea>
+    <button class = "button submit">Add Comment</button>
+</form>
+
+<% include ../partials/footer %>
